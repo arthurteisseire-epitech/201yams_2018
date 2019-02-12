@@ -6,7 +6,8 @@ import re
 
 def dice_expected(combination):
     expected = re.split('^[a-zA-Z]+_([1-6])(_([1-6]))?$', combination)
-    if not expected:
+    match = re.match('^[a-zA-Z]+_([1-6])(_([1-6]))?$', combination)
+    if not match:
         exit(84)
     try:
         return [int(expected[1]), int(expected[3])]
