@@ -1,2 +1,21 @@
 #!/usr/bin/python3
 
+from parse import *
+import re
+
+
+def dice_expected(combination):
+    expected = re.split('^[a-zA-Z]+_([1-6])(_([1-6]))?$', combination)
+    if not expected:
+        exit(84)
+    try:
+        return [int(expected[1]), int(expected[3])]
+    except TypeError:
+        return [int(expected[1])]
+
+
+args = parse_args()
+dices = [args.d1, args.d2, args.d3, args.d4, args.d5]
+comb_dice = dice_expected(args.c)
+
+print(comb_dice)
