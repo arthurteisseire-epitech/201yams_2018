@@ -5,14 +5,13 @@ import re
 
 
 def dice_expected(combination):
-    expected = re.split('^[a-zA-Z]+_([1-6])(_([1-6]))?$', combination)
-    match = re.match('^[a-zA-Z]+_([1-6])(_([1-6]))?$', combination)
-    if not match:
+    expected = re.match('^[a-zA-Z]+_([1-6])(_([1-6]))?$', combination)
+    if not expected:
         exit(84)
     try:
-        return [int(expected[1]), int(expected[3])]
+        return [int(expected.group(1)), int(expected.group(3))]
     except TypeError:
-        return [int(expected[1])]
+        return [int(expected.group(1))]
 
 
 args = parse_args()
