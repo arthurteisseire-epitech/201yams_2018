@@ -1,7 +1,4 @@
-import numpy as np
 import math
-
-_round = 2
 
 
 class Op:
