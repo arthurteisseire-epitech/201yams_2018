@@ -1,4 +1,5 @@
 import argparse
+import re
 from proba import *
 
 
@@ -7,6 +8,14 @@ def dice_range(dice):
     if dice < 0 or dice > 6:
         raise argparse.ArgumentTypeError("Dices must be between 1 and 6 included")
     return dice
+
+
+def is_valid_combination(combination):
+    combination = str(combination)
+    match = re.match('^[a-z]+_([1-6])(_([1-6]))?$', combination)
+    if not match:
+        raise argparse.ArgumentTypeError("Combination dices must be between 1 and 6")
+    return combination
 
 
 class Parser:
@@ -18,7 +27,7 @@ class Parser:
         parser.add_argument("d3", type=dice_range, help="value of the third die (0 if not thrown)")
         parser.add_argument("d4", type=dice_range, help="value of the fourth die (0 if not thrown)")
         parser.add_argument("d5", type=dice_range, help="value of the fifth die (0 if not thrown)")
-        parser.add_argument("c", type=str, help="expected combination")
+        parser.add_argument("c", type=is_valid_combination, help="expected combination")
         args = parser.parse_args()
         return args
 
