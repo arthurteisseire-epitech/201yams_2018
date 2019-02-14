@@ -1,13 +1,12 @@
 class Op:
 
     @staticmethod
-    def pair(x):
+    def pair(dices, x):
         print("pair:")
-        print(x)
+        print(dices, x)
 
     @staticmethod
     def full(dices, x, y):
         print("full:")
-        print(dices)
-        print(x)
-        print(y)
+        print(dices, x, y)
+
