@@ -1,21 +1,5 @@
 #!/usr/bin/python3
 
-from parse import *
-import re
+from parse import Parser
 
-
-def dice_expected(combination):
-    expected = re.match('^[a-zA-Z]+_([1-6])(_([1-6]))?$', combination)
-    if not expected:
-        exit(84)
-    try:
-        return [int(expected.group(1)), int(expected.group(3))]
-    except TypeError:
-        return [int(expected.group(1))]
-
-
-args = parse_args()
-dices = [args.d1, args.d2, args.d3, args.d4, args.d5]
-comb_dice = dice_expected(args.c)
-
-print(comb_dice)
+Parser.exec_func()
