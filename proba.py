@@ -18,6 +18,6 @@ class Op:
         if x < 5:
             print("Straight expected combination must be 5 or 6")
             exit(84)
-        print("full:")
-        print(dices, x, y)
+        print("straight:")
+        print(dices, x)
 
