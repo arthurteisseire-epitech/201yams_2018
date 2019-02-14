@@ -16,7 +16,6 @@ class Op:
         print("full:")
         print(dices, x, y)
 
-
     @staticmethod
     def straight(dices, x):
         if x < 5:
@@ -25,4 +24,6 @@ class Op:
         print("straight:")
         print(dices, x)
 
-
+    @staticmethod
+    def yams(dices, x):
+        return round(pow(1 / 6, 5) * 100, 2)
