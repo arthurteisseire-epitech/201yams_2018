@@ -1,29 +1,17 @@
+import numpy as np
+import math
+
+
 class Op:
 
     @staticmethod
-    def pair(dices, x):
-        print("pair:")
-        print(dices, x)
-        for dice in dices:
-            print(dice)
-        return "pair"
-
-    @staticmethod
-    def full(dices, x, y):
-        if x == y:
-            print("Full dices values mustn't be the sames")
-            exit(84)
-        print("full:")
-        print(dices, x, y)
-
-    @staticmethod
-    def straight(dices, x):
-        if x < 5:
-            print("Straight expected combination must be 5 or 6")
-            exit(84)
-        print("straight:")
-        print(dices, x)
-
-    @staticmethod
     def yams(dices, x):
-        return round(pow(1 / 6, 5) * 100, 2)
+        return lb(len(dices), 5)
+
+
+def lb(n, k):
+    proba_ok = pow(1.0 / 6.0, k)
+    proba_ko = pow(5.0 / 6.0, n - k)
+    comb = math.factorial(n) / math.factorial(k) * math.factorial(n - k)
+    return round(proba_ok * proba_ko * comb * 100, 2)
+
