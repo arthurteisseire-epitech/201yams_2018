@@ -8,19 +8,19 @@ class Op:
 
     @staticmethod
     def yams(dices, x):
-        return round(lb(len(dices), 5), _round)
+        return lb(len(dices), 5)
 
     @staticmethod
     def four(dices, x):
-        return round(lb(len(dices), 4) + Op.yams(dices, x), _round)
+        return lb(len(dices), 4) + Op.yams(dices, x)
 
     @staticmethod
     def three(dices, x):
-        return round(lb(len(dices), 3) + Op.four(dices, x), _round)
+        return lb(len(dices), 3) + Op.four(dices, x)
 
     @staticmethod
     def pair(dices, x):
-        return round(lb(len(dices), 2) + Op.three(dices, x), _round)
+        return lb(len(dices), 2) + Op.three(dices, x)
 
 
 def lb(n, k):
