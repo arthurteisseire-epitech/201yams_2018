@@ -21,6 +21,13 @@ class Parser:
         args = Parser.parse_args()
         dices = [args.d1, args.d2, args.d3, args.d4, args.d5]
 
-        array = str(args.c).split("_")
-        func_name = array[0]
-        exec("Op." + func_name + "(dices," + ",".join(array[1:]) + ")")
+        if dices.count(0) == 5 or dices.count(0) == 0:
+            if len([dice for dice in dices if 0 <= dice <= 6]) != len(dices):
+                print("Dices must be between 1 and 6 included")
+                exit(84)
+            array = str(args.c).split("_")
+            func_name = array[0]
+            exec("Op." + func_name + "(dices," + ",".join(array[1:]) + ")")
+        else:
+            print("All dices must be 0 or none of it")
+            exit(84)
