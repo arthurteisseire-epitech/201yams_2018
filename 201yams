@@ -1,2 +1,6 @@
 #!/usr/bin/python3
 
+from parse import Parser
+
+
+Parser.exec_func()
