@@ -4,8 +4,6 @@ class Op:
     def pair(dices, x):
         print("pair:")
         print(dices, x)
-        for dice in dices:
-            print(dice)
         return "pair"
 
     @staticmethod
