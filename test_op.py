@@ -5,10 +5,10 @@ from proba import Op
 class TestOp(TestCase):
     def test_yams(self):
         self.assertEqual(round(Op.yams([0, 0, 0, 0, 0], 4), 2), 0.01)
-        self.assertEqual(round(Op.yams([1, 1, 1, 1, 2], 2), 2), 0.33)
 
     def test_four(self):
         self.assertEqual(round(Op.four([0, 0, 0, 0, 0], 4), 2), 0.33)
+        self.assertEqual(round(Op.four([1, 2, 3, 4, 5], 4), 2), 1.62)
 
     def test_three(self):
         self.assertEqual(round(Op.three([0, 0, 0, 0, 0], 4), 2), 3.55)
