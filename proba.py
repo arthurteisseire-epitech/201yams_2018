@@ -5,19 +5,27 @@ class Op:
 
     @staticmethod
     def yams(dices, x):
-        return lb(len(dices) - dices.count(x), 5 - dices.count(x))
+        res = lb(len(dices) - dices.count(x), 5 - dices.count(x))
+        print("chances to get a %d yams:  %.2f%%" % (x, res))
+        return res
 
     @staticmethod
     def four(dices, x):
-        return lb(len(dices) - dices.count(x), 4 - dices.count(x))
+        res = lb(len(dices) - dices.count(x), 4 - dices.count(x))
+        print("chances to get a %d four-of-a-kind:  %.2f%%" % (x, res))
+        return res
 
     @staticmethod
     def three(dices, x):
-        return lb(len(dices) - dices.count(x), 3 - dices.count(x))
+        res = lb(len(dices) - dices.count(x), 3 - dices.count(x))
+        print("chances to get a %d three-of-a-kind:  %.2f%%" % (x, res))
+        return res
 
     @staticmethod
     def pair(dices, x):
-        return lb(len(dices) - dices.count(x), 2 - dices.count(x))
+        res = lb(len(dices) - dices.count(x), 2 - dices.count(x))
+        print("chances to get a %d pair:  %.2f%%" % (x, res))
+        return res
 
     @staticmethod
     def straight(dices, x):
