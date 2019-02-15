@@ -15,3 +15,6 @@ class TestOp(TestCase):
 
     def test_pair(self):
         self.assertEqual(round(Op.pair([0, 0, 0, 0, 0], 4), 2), 19.62)
+
+    def test_straight(self):
+        self.assertEqual(round(Op.straight([2, 2, 5, 4, 6], 6), 2), 16.67)

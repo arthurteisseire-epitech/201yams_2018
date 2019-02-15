@@ -19,6 +19,17 @@ class Op:
     def pair(dices, x):
         return lb(len(dices) - dices.count(x), 2 - dices.count(x))
 
+    @staticmethod
+    def straight(dices, x):
+        exp_arr = [1 if x == 6 else 6]
+        for dice in dices:
+            if dice not in exp_arr:
+                exp_arr.append(dice)
+        res = 1
+        for i in range(1, 6 - (len(exp_arr) - 1)):
+            res *= i / 6
+        return res * 100
+
 
 def lb(n, k):
     if k > n:
