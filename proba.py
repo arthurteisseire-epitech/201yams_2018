@@ -5,19 +5,19 @@ class Op:
 
     @staticmethod
     def yams(dices, x):
-        return lb(len(dices), 5)
+        return lb(len(dices), 5 - dices.count(x))
 
     @staticmethod
     def four(dices, x):
-        return lb(len(dices), 4)
+        return lb(len(dices), 4 - dices.count(x))
 
     @staticmethod
     def three(dices, x):
-        return lb(len(dices), 3)
+        return lb(len(dices), 3 - dices.count(x))
 
     @staticmethod
     def pair(dices, x):
-        return lb(len(dices), 2)
+        return lb(len(dices), 2 - dices.count(x))
 
 
 def lb(n, k):

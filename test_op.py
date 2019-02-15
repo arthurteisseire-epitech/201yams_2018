@@ -5,7 +5,7 @@ from proba import Op
 class TestOp(TestCase):
     def test_yams(self):
         self.assertEqual(round(Op.yams([0, 0, 0, 0, 0], 4), 2), 0.01)
-        # self.assertEqual(round(Op.yathze([1, 1, 1, 1, 2], 2), 2), 0.33)
+        self.assertEqual(round(Op.yams([1, 1, 1, 1, 2], 2), 2), 0.33)
 
     def test_four(self):
         self.assertEqual(round(Op.four([0, 0, 0, 0, 0], 4), 2), 0.33)
