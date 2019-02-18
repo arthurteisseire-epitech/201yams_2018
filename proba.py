@@ -29,8 +29,8 @@ class Op:
 
     @staticmethod
     def full(dices, n1, n2):
-        n = len(dices) - dices.count(n1) - dices.count(n2)
-        k = 3 - dices.count(n1)
+        n = len(dices) - min(dices.count(n1), 3) - min(dices.count(n2), 2)
+        k = 3 - min(dices.count(n1), 3)
         comb = math.factorial(n) / (math.factorial(k) * math.factorial(n - k))
         res = pow(1 / 6, n) * comb
         print("chances to get a %d full of %d:  %.2f%%" % (n1, n2, res))
