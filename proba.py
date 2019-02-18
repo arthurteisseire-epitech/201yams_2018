@@ -28,6 +28,15 @@ class Op:
         return res
 
     @staticmethod
+    def full(dices, n1, n2):
+        n = len(dices) - dices.count(n1) - dices.count(n2)
+        k = 3 - dices.count(n1)
+        comb = math.factorial(n) / (math.factorial(k) * math.factorial(n - k))
+        res = pow(1 / 6, n) * comb
+        print("chances to get a %d full of %d:  %.2f%%" % (n1, n2, res))
+        return res * 100
+
+    @staticmethod
     def straight(dices, x):
         exp_arr = [1 if x == 6 else 6]
         for dice in dices:

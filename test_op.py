@@ -18,3 +18,7 @@ class TestOp(TestCase):
 
     def test_straight(self):
         self.assertEqual(round(Op.straight([2, 2, 5, 4, 6], 6), 2), 16.67)
+
+    def test_full(self):
+        self.assertEqual(round(Op.full([0, 0, 0, 0, 0], 2, 3), 2), 0.13)
+        self.assertEqual(round(Op.full([2, 3, 2, 3, 2], 2, 3), 2), 100.00)
