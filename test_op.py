@@ -2,23 +2,42 @@ from unittest import TestCase
 from proba import Op
 
 
+class TestOneHundred(TestCase):
+    def test_yams_oh(self):
+        self.assertEqual(100.00, round(Op.yams([4, 4, 4, 4, 4], 4), 2))
+
+    def test_four_oh(self):
+        self.assertEqual(100.00, round(Op.four([4, 4, 4, 4, 2], 4), 2))
+
+    def test_three_oh(self):
+        self.assertEqual(100.00, round(Op.three([4, 4, 4, 2, 2], 4), 2))
+
+    def test_pair_oh(self):
+        self.assertEqual(100.00, round(Op.pair([4, 4, 2, 2, 2], 4), 2))
+
+    def test_straight_oh(self):
+        self.assertEqual(100.00, round(Op.straight([1, 2, 3, 4, 5], 5), 2))
+
+    def test_full_oh(self):
+        self.assertEqual(100.00, round(Op.full([4, 4, 4, 2, 2], 4, 2), 2))
+
+
 class TestOp(TestCase):
     def test_yams(self):
-        self.assertEqual(round(Op.yams([0, 0, 0, 0, 0], 4), 2), 0.01)
+        self.assertEqual(0.01, round(Op.yams([0, 0, 0, 0, 0], 4), 2))
 
     def test_four(self):
-        self.assertEqual(round(Op.four([0, 0, 0, 0, 0], 4), 2), 0.33)
-        self.assertEqual(round(Op.four([1, 2, 3, 4, 5], 4), 2), 1.62)
+        self.assertEqual(0.33, round(Op.four([0, 0, 0, 0, 0], 4), 2))
+        self.assertEqual(1.62, round(Op.four([1, 2, 3, 4, 5], 4), 2))
 
     def test_three(self):
-        self.assertEqual(round(Op.three([0, 0, 0, 0, 0], 4), 2), 3.55)
+        self.assertEqual(3.55, round(Op.three([0, 0, 0, 0, 0], 4), 2))
 
     def test_pair(self):
-        self.assertEqual(round(Op.pair([0, 0, 0, 0, 0], 4), 2), 19.62)
+        self.assertEqual(19.62, round(Op.pair([0, 0, 0, 0, 0], 4), 2))
 
     def test_straight(self):
-        self.assertEqual(round(Op.straight([2, 2, 5, 4, 6], 6), 2), 16.67)
+        self.assertEqual(16.67, round(Op.straight([2, 2, 5, 4, 6], 6), 2))
 
     def test_full(self):
-        self.assertEqual(round(Op.full([0, 0, 0, 0, 0], 2, 3), 2), 0.13)
-        self.assertEqual(round(Op.full([2, 3, 2, 3, 2], 2, 3), 2), 100.00)
+        self.assertEqual(0.13, round(Op.full([0, 0, 0, 0, 0], 2, 3), 2))
