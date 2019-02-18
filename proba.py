@@ -11,19 +11,19 @@ class Op:
 
     @staticmethod
     def four(dices, x):
-        res = lb(len(dices) - dices.count(x), 4 - dices.count(x))
+        res = lb(len(dices) - min(dices.count(x), 4), 4 - min(dices.count(x), 4))
         print("chances to get a %d four-of-a-kind:  %.2f%%" % (x, res))
         return res
 
     @staticmethod
     def three(dices, x):
-        res = lb(len(dices) - dices.count(x), 3 - dices.count(x))
+        res = lb(len(dices) - min(dices.count(x), 3), 3 - min(dices.count(x), 3))
         print("chances to get a %d three-of-a-kind:  %.2f%%" % (x, res))
         return res
 
     @staticmethod
     def pair(dices, x):
-        res = lb(len(dices) - dices.count(x), 2 - dices.count(x))
+        res = lb(len(dices) - min(dices.count(x), 2), 2 - min(dices.count(x), 2))
         print("chances to get a %d pair:  %.2f%%" % (x, res))
         return res
 
