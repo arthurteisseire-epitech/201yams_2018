@@ -29,12 +29,14 @@ class Op:
 
     @staticmethod
     def full(dices, n1, n2):
+        if n1 == n2:
+            exit(84)
         n = len(dices) - min(dices.count(n1), 3) - min(dices.count(n2), 2)
         k = 3 - min(dices.count(n1), 3)
         comb = math.factorial(n) / (math.factorial(k) * math.factorial(n - k))
-        res = pow(1 / 6, n) * comb
+        res = pow(1 / 6, n) * comb * 100
         print("chances to get a %d full of %d:  %.2f%%" % (n1, n2, res))
-        return res * 100
+        return res
 
     @staticmethod
     def straight(dices, x):
@@ -45,7 +47,9 @@ class Op:
         res = 1
         for i in range(1, 6 - (len(exp_arr) - 1)):
             res *= i / 6
-        return res * 100
+        res *= 100
+        print("chances to get a %d straight:  %.2f%%" % (x, res))
+        return res
 
 
 def lb(n, k):
