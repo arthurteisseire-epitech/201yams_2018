@@ -40,6 +40,8 @@ class Op:
 
     @staticmethod
     def straight(dices, x):
+        if x != 5 or x != 6:
+            exit(84)
         exp_arr = [1 if x == 6 else 6]
         for dice in dices:
             if dice not in exp_arr:
